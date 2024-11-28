@@ -71,7 +71,7 @@
     border: 2px solid black;
     margin: 0px auto;
     overflow: hidden;
-    display: none;
+    /* display: none; */
 
 
 }header{
@@ -230,7 +230,7 @@ section{
 
 }#Pbtn{
     height: 60px;
-    width: 200px;
+    width: 100px;
     margin-left: 30px;
    margin-top: 250px;
     background-color: rgb(108, 194, 88);
@@ -239,13 +239,23 @@ section{
 
 }#Bbtn{
     height: 60px;
-    width: 200px;
-    margin-left: 320px;
+    width: 100px;
+    margin-left:180px;
    margin-top: 250px;
     background-color: rgb(211, 151, 32);
     position: absolute;
     display:block;
+}#Dbtn{
+    height: 60px;
+    width: 120px;
+    margin-left: 320px;
+   margin-top: 250px;
+    background-color: rgb(120, 231, 95);
+    position: absolute;
+    display:none;
 }
+
+
 @media only screen and (max-width: 450px){
     .Inputdiv{
         background-color: rgb(154, 141, 141);
@@ -277,6 +287,11 @@ section{
      margin-left:35px;
      width: 500px;
      
+    }#Dbtn{
+        display: block;
+    }
+    #Pbtn{
+        display:none;
     }
 
 }

@@ -1,11 +1,26 @@
-function check()
-{
-    var demo=document.getElementById("Photo").value.replace(/.*(\/|\\)/,'');
-    confirm("Your photo uloaded !");
-    document.getElementById("Himg").src =demo;
-    
 
-}
+  // =================Function to update the profile picture in the template ====================
+  function check(input) {
+    const a = document.getElementById('Himg');
+    const file = input.files[0];
+  
+    if (file) {
+      const reader = new FileReader();
+  
+      reader.onload = function (e) {
+        a.src = e.target.result;
+      };
+  
+      reader.readAsDataURL(file);
+    }
+  }
+  // ==============================Function to update the profile picture ends here ====================
+
+
+
+
+
+//  ============================================ function to fiels personal details
 function Sent(){
     var a=document.getElementById("name").value;
     var b=document.getElementById("num").value;
@@ -109,6 +124,10 @@ function Hardinput(){
     document.getElementById("Hard").appendChild(list);
     document.getElementById("HardInp").value="";
 }
+
+
+
+// ==========================================function to make resume===========================================================
 function Make(){
     var a=document.getElementById("name").value;
     var b=document.getElementById("num").value;
@@ -132,19 +151,55 @@ function Make(){
     document.getElementById("k").style.display = "none";
     document.getElementById("j").style.display = "block";
 
-
+// ==================================print page on window=======================================
 }function printPage(){
   
    var btn=document.getElementById("Pbtn");
    btn.style.display="none";
    document.getElementById("Bbtn").style.display="none";
-   window.print();
+  window.print();
    document.getElementById("j").style.display = "none";
    document.getElementById("k").style.display = "block";
 
 
    }
-   
+
+// ==================================print page on mobile=======================================
+   function MprintPage(){
+  
+    var btn=document.getElementById("Dbtn");
+    btn.style.display="none";
+    document.getElementById("Pbtn").style.display="none";
+    document.getElementById("Bbtn").style.display="none";
+    document.getElementById("Dbtn").style.display="none";
+        // Select the element containing the resume template
+        const element = document.getElementById("j");
+      
+        // the screen width to adjust PDF format dynamically
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      
+        // Generate the PDF from the element with custom options
+        const options = {
+          margin: [0, 0, 0, 0],
+          filename: "Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "px", format: [1500, 1800], orientation: "portrait" } // Default size for larger screens
+        };
+      
+        // Adjust format and orientation for smaller screens
+        if (screenWidth <=500) {
+          options.jsPDF.format = [1200,800]; //  the format for smaller screens
+          options.jsPDF.orientation = "portrait"; //  the orientation for smaller screens
+        }
+      
+        html2pdf().set(options).from(element).toContainer().toCanvas().toPdf().save();
+        alert("Download successfull !");
+      }
+
+
+ 
+
 
 function BPage(){
     document.getElementById("j").style.display = "none";

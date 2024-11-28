@@ -4,15 +4,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Resume</title>
+		<title>Resume Maker</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="script.js"></script>
+		<!-- <link  rel="shortcut icon" type="Logo/png" href="Images/MI.png"> -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
 		integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
 		 crossorigin="anonymous" referrerpolicy="no-referrer" />
 	   <!-- this is for  only animation -->
-	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-	 />
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	</head>
 	<body>
 
@@ -24,7 +23,7 @@
 					<td width="50%">
 						Upload Passport Size Photo<br>
 				
-			<input type="file" id="Photo" name="PassPhoto" onchange="check()">
+			<input type="file" id="Photo" name="PassPhoto" onchange="check(this)" alt="Profilepicture">
 			<!-- test button -->
 		
 			<br>
@@ -157,14 +156,17 @@
 						<li>English</li>
 						 -->
 						</ul>	
-						<button id="Pbtn" onclick="printPage()">Print Your Resume</button>
-						<button id="Bbtn" onclick="BPage()">Back To Edit</button>
+						<button id="Pbtn" onclick="printPage()">Print</button>
+						<button id="Bbtn" onclick="BPage()">Back</button>
+						<button id="Dbtn" onclick="MprintPage()">Download</button>
 
 				</div>
 			</section>
 
 		</div>
 		
+		<script src="script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
 	</body>
 	</html>
