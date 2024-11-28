@@ -1,0 +1,170 @@
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Resume</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+		integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+		 crossorigin="anonymous" referrerpolicy="no-referrer" />
+	   <!-- this is for  only animation -->
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	 />
+	</head>
+	<body>
+
+		<!-- all resume content Input box  -->
+		<div class="Inputdiv" id="k">
+			<table width="100%" height="100%" border="5">
+				<tr><td colspan="2" id="HH"><center>RESUME MAKER</center></td></tr>
+				<tr>
+					<td width="50%">
+						Upload Passport Size Photo<br>
+				
+			<input type="file" id="Photo" name="PassPhoto" onchange="check()">
+			<!-- test button -->
+		
+			<br>
+			Languages known
+			<br>
+			
+			<input type="text" id="lenInp" placeholder="Enter at least Two Languages">   	<button onclick="leninput()">Add</button><br>
+
+
+			<br>
+			Your Expertise
+			 <br>
+			 <input type="text" id="ExpInp" placeholder="Enter at least Three Expertise">   	<button onclick="Expinput()">Add</button><br>
+              <br>
+              Your Hobbies
+			  <br>
+			  <input type="text" id="HobInp" placeholder="Enter at least Three Hobbies">   	<button onclick="Hobinput()">Add</button><br>
+
+			Your Contact details
+
+			<br>
+			<input type="text" id="name" placeholder="Enter Your full name" required><br>
+			<input type="tel" id="num" placeholder="Enter Your number" maxlength=" 10" required><br>
+			<input type="email" id="email" placeholder="Enter Your email" required><br>
+			<input type="text" id="git" placeholder="Enter Your GitHub Id " required><br>
+			<input type="text" id="lin" placeholder="Enter Your linkedIn Id" onchange="Sent()" required>
+			
+
+					</td><td width="50%">
+
+						<textarea id="ab" onchange="about()" required placeholder="Enter about your self ,like i am student a passionate webdeveloper etc"></textarea>
+
+						Your Education
+						<br>
+						<input type="text" id="EduInp" placeholder="Enter your education">   	<button onclick="Eduinput()">Add</button><br>
+						<br>
+					
+						Your Experience
+						<br>
+						<input type="text" id="ExpeInp" placeholder="Enter your experience details">   	<button onclick="Expeinput()">Add</button><br>
+<br>
+						Your Hardskills
+						<br>
+						<input type="text" id="HardInp" placeholder="Enter your Hardskills">   	<button onclick="Hardinput()">Add</button><br>
+					</td>
+					<tr><td colspan="2"><center><button id="btn"  onclick="Make()">Make Your Resume</button></center></td></tr>
+				</tr>
+			</table>
+			
+		</div>
+		<!-- all resume content output box -->
+		<div class="Outputdiv" id="j">
+			<header>
+				<img src="" id="Himg"><span id="Htittle"></span>
+				
+			</header>
+			<section>
+
+				<!-- left part -->
+				<div class="s1">
+					<br>
+					<br>
+					<br>
+			
+					<ol>
+						<i class="fa-solid fa-phone"></i><li id="n">&nbsp;</li>
+						<i class="fa-solid fa-envelope"></i><li id="e">&nbsp;</li>
+						<i class="fa-brands fa-github"></i><li id="g">&nbsp;</li>
+						<i class="fa-brands fa-linkedin"></i><li id="l">&nbsp;</li>
+
+					</ol>
+					<br>
+					<br>
+				<button>Languages</button>
+				<span>
+					<ol id="len">
+					<!-- <li>English</li>
+					<li>English</li>
+					<li>English</li> -->
+					</ol>
+				</span>
+				<br>
+				<button>Expertise</button>
+				<span>
+					<ul id="exp">
+					<!-- <li>Management skills</li>
+					<li>English</li>
+					<li>English</li> -->
+					</ul>
+				</span>
+				<br>
+				<button>Hobbies</button>
+				<span >
+					<ul id="Hob">
+					<!-- <li>Management skills</li>
+					<li>English</li>
+					<li>English</li> -->
+					
+					</ul>
+				</span>
+			     </div>
+				 <!-- Right part of section -->
+
+				<div class="s2">
+					<center><h2 id="about">About Me</h2>
+					<textarea id="AboutText" maxlength="100"></textarea>
+				</center>
+				<br>
+				<br>
+				<button>Educations</button>
+				<ul id="Edu">
+					<!-- <li>12th from kishangang Bihar</li>
+					<li>English</li>
+					<li>English</li> -->
+					
+					</ul>
+				<br>
+				<br>
+				<button>Experience</button>
+				<ul id="Exp">
+					<!-- <li>12th from kishangang Bihar</li>
+					<li>English</li>
+					<li>English</li> -->
+					
+					</ul>	
+					<button>Hard skills</button>
+					<ul id="Hard">
+						<!-- <li>12th from kishangang Bihar</li>
+						<li>English</li>
+						<li>English</li>
+						 -->
+						</ul>	
+						<button id="Pbtn" onclick="printPage()">Print Your Resume</button>
+						<button id="Bbtn" onclick="BPage()">Back To Edit</button>
+
+				</div>
+			</section>
+
+		</div>
+		
+
+	</body>
+	</html>
